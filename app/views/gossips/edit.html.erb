@@ -1,10 +1,7 @@
 <h1> Editer un gossip </h1>
 
-<%= form_for @gossip do |f| %>
-	<div class="form-group">
-		<label>Nom du Gossiper :</label>
-		<%= f.text_field :anonymous_gossiper, class: 'form-control' %>
-	</div>
+<%= form_for @gossip, :url => user_gossip_path do |f| %>
+
 	<div class="form-group">
 		<label>Titre du gossip :</label>
 		<%= f.text_field :title, class: 'form-control' %>

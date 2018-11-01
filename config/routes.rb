@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'registrations/new'
   root to: 'static_pages#home'
   resources :static_pages
 

@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     p "Regarde ici"
     p @user
+    redirect_to user_gossips_path(@user.id)
   end
 
   def new
@@ -32,6 +33,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password)
+  end
+
+  def gossip_params
+    params.require(:gossip).permit(:title, :content, :user_id)
   end
 
 end

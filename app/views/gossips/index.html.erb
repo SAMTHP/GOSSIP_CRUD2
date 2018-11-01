@@ -1,11 +1,12 @@
-<h1>Gossips</h1>
+
+<h1> Bonjour <%= @user.name %> </h1>
+<h2>Gossips</h2>
 <p>Listes :</p>
 
 <table class="table">
 	<thead>
 		<tr>
-			<td>ID</td>
-			<td>Gossiper</td>
+			<td>USER_ID</td>
 			<td>Titre</td>
 			<td>Contenu</td>
 		</tr>
@@ -15,15 +16,14 @@
 	<tbody>
 		<%  @gossips.each do |gossip| %>
 		<tr>
-			<td><%=  gossip.id %></td>
-			<td><%=  gossip.anonymous_gossiper %></td>
+			<td><%=  gossip.user.id %></td>
 			<td><%= gossip.title %></td>
 			<td><%= gossip.content %></td>
 		</tr>
 		<tr>
-			<td><%= link_to "Voir", gossip_path(gossip.id), class: "btn btn-lg btn-primary" %></td>
-			<td><%= link_to "Editer", edit_gossip_path(gossip.id), class: "btn btn-lg btn-succes" %></td>
-			<td><a href=" <%= gossip_path(gossip.id) %> " class="btn btn-lg btn-danger" data-confirm="Etes vous sûr ?" data-method="DELETE">Supprimer le gossip</a></td>
+			<td><%= link_to "Voir", user_gossip_path(@user.id, gossip.id), class: "btn btn-lg btn-primary" %></td>
+			<td><%= link_to "Editer", edit_user_gossip_path(@user.id, gossip.id), class: "btn btn-lg btn-succes" %></td>
+			<td><a href=" <%= user_gossip_path(@user.id, gossip.id) %> " class="btn btn-lg btn-danger" data-confirm="Etes vous sûr ?" data-method="DELETE">Supprimer le gossip</a></td>
 		</tr>
 		<%  end %>
 	</tbody>
@@ -31,6 +31,6 @@
 
 
 <p>
-	<a href=" <%= new_gossip_path %> " class="btn btn-success">Créer un gossip</a>
+	<a href=" <%= new_user_gossip_path %> " class="btn btn-success">Créer un gossip</a>
 </p>
 

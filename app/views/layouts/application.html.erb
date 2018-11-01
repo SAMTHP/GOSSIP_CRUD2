@@ -17,8 +17,16 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Accueil",   '/' %></li>
-        <li><%= link_to "Index des gossips",   '/gossips' %></li>
-        <li><%= link_to "Nouveau gossip", '/gossips/new' %></li>
+        <li>
+          <% if params[:user_id] %>
+            <%=link_to "Index des gossips", user_gossips_path %>
+          <% end %>
+        </li>
+        <li>
+          <% if params[:user_id] %>
+            <%=link_to "Nouveau gossip", new_user_gossip_path %>
+          <% end %>
+        </li>
       </ul>
     </nav>
   </div>

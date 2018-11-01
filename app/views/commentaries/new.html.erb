@@ -1,6 +1,6 @@
 <h1> Créer un commentaire </h1>
 
-<%= form_for @commentary do |f| %>
+<%= form_for @commentary, :url => user_gossip_commentaries_path do |f| %>
 	<div class="form-group">
 		<label>Contenu :</label>
 		  <%= f.text_area :content, class: 'form-control' %>

@@ -1,0 +1,34 @@
+<h1>Commentaires</h1>
+<p>Listes :</p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<td>GOSSIP_ID</td>
+			<td>ID</td>
+			<td>Contenu</td>
+			<td>Action</td>
+		</tr>
+
+	</thead>
+
+	<tbody>
+		<%  @commentaries.each do |comment| %>
+		<tr>
+			<td><%=  comment.gossip.id %></td>
+			<td><%=  comment.id %></td>
+			<td><%=  comment.content %></td>
+			
+		</tr>
+		<tr>
+
+		</tr>
+		<%  end %>
+
+	</tbody>
+</table>
+
+<p>
+	<a href=" <%= new_gossip_commentary_path %> " class="btn btn-success">Commenter</a>
+</p>
+

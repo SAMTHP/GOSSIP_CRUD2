@@ -1,0 +1,26 @@
+<h1><%= @gossip.anonymous_gossiper %></h1>
+
+<h1><%= @gossip.title %></h1>
+
+<p><%=  @gossip.content %></p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<td>Contenu</td>
+		</tr>
+
+	</thead>
+
+	<tbody>
+		<%  @gossip_commentaries.each do |gossip_comment| %>
+		<tr>
+			
+			<td><%=  gossip_comment.content %></td>
+			
+		</tr>
+		<%  end %>
+	</tbody>
+</table>
+
+<a href=" <%= gossips_path %> " class="btn btn-primary">Revenir aux gossips</a>

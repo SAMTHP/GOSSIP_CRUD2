@@ -1,0 +1,10 @@
+<h1> Editer un commentaire </h1>
+
+<%= form_for @commentary, :url => gossip_commentary_path do |f| %>
+	</div>
+	<div class="form-group">
+		<label>Contenu :</label>
+		  <%= f.text_area :content, class: 'form-control' %>
+	</div>
+  <%= f.submit "modifier", class:"btn btn-primary" %>
+<% end %>

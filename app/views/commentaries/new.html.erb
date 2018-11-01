@@ -1,0 +1,9 @@
+<h1> Créer un commentaire </h1>
+
+<%= form_for @commentary do |f| %>
+	<div class="form-group">
+		<label>Contenu :</label>
+		  <%= f.text_area :content, class: 'form-control' %>
+	</div>
+  <%= f.submit "Créer le commentaire", class:"btn btn-primary" %>
+<% end %>
